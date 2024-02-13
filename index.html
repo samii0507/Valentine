@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href='https://fonts.googleapis.com/css?family=Love Ya Like A Sister' rel='stylesheet'>
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Valentine's Day</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Will You be my valentine??</h1>
+        </div>
+        <div class="gif_container">
+            <img id="valentineGif" src="cat-cat-love.gif">
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
+            <button class="btn" id="noButton" onclick="moveButton()">No</button>
+        </div>
+    </div>
+
+    <script>
+        var clickCount = 0;
+
+        function moveButton() {
+            var buttonTexts = ["Are you sure", "Don't do this to me", "You are breaking my heart", "I'm gonna cry..."];
+            var gifArray = [
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcWVyZGo1em9rOG5idWl6NzdzZXNoc2tld2FqbXc3bWFlODdkazhraiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wfS4vDyVsASQygl4mN/giphy.gif",
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGZ2aWZzYzRvNGdld2xqNTB1OWpraTI5bzlqb3NyNzAyeGJsZm9lbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/nR4L10XlJcSeQ/giphy.gif",
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXpvdWI1NHUxamNyOWc4c3NmbzN6cnN3ZzFkd2NpbDNscTlvNXZmdiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5i7umUqAOYYEw/giphy.gif",
+                "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGxieXZrc3hwZjl4NXMxdzJnM205cmc1bG1uY3V6bngyY2h1M3dqdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/v6aOjy0Qo1fIA/giphy.gif"
+                
+            ];
+
+            if (clickCount < buttonTexts.length) {
+                document.getElementById('noButton').innerHTML = buttonTexts[clickCount];
+                document.getElementById('valentineGif').src = gifArray[clickCount];
+                clickCount++;
+            } else {
+                // Reset the text and gif after reaching the last one
+                document.getElementById('noButton').innerHTML = "No";
+                document.getElementById('valentineGif').src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif";
+                clickCount = 0;
+            }
+
+            var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+            var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+
+        function nextPage() {
+            window.location.href = "yes.html";
+        }
+    </script>
+</body>
+
+</html>

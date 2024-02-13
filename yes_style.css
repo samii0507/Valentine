@@ -1,0 +1,23 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background:linear-gradient(to bottom, #eb9b92, #ffffff);
+}
+
+.header_text {
+    font-family: 'Love Ya Like A Sister';
+    font-size: 70px;
+    font-weight: bold;
+    color: rgb(5, 4, 5);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.gif_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
